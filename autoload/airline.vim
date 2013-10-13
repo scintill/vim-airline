@@ -132,17 +132,22 @@ function! airline#check_mode(winnr)
   let context = s:contexts[a:winnr]
 
   if get(w:, 'airline_active', 1)
-    let l:m = mode()
-    if l:m ==# "i"
-      let l:mode = ['insert']
-    elseif l:m ==# "R"
-      let l:mode = ['replace']
-    elseif l:m =~# '\v(v|V||s|S|)'
-      let l:mode = ['visual']
+    if &buftype == 'quickfix' || &buftype == 'help'
+      let l:mode = ['specbuf']
+      let w:airline_current_mode = ''
     else
-      let l:mode = ['normal']
+      let l:m = mode()
+      if l:m ==# "i"
+        let l:mode = ['insert']
+      elseif l:m ==# "R"
+        let l:mode = ['replace']
+      elseif l:m =~# '\v(v|V||s|S|)'
+        let l:mode = ['visual']
+      else
+        let l:mode = ['normal']
+      endif
+      let w:airline_current_mode = get(g:airline_mode_map, l:m, l:m)
     endif
-    let w:airline_current_mode = get(g:airline_mode_map, l:m, l:m)
   else
     let l:mode = ['inactive']
     let w:airline_current_mode = get(g:airline_mode_map, '__')
