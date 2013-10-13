@@ -1,6 +1,7 @@
-"This attempts to replicate Powerline with the solarized256 colorscheme and the default theme.
-"It was generated from the Powerline colorscheme struct and a script attempting to match powerline
-"items to the Airline layout.
+" This attempts to replicate Powerline with the solarized256 colorscheme and the default theme.
+" It was generated from the Powerline colorscheme struct and a script attempting to match powerline
+" items to the Airline layout.
+" https://gist.github.com/scintill/6956980
 let g:airline#themes#powerline_solarized256#palette = {
 \   'ctrlp':{
 \     'CtrlPwhite':[
@@ -199,3 +200,14 @@ let g:airline#themes#powerline_solarized256#palette.visual.airline_c = g:airline
 let g:airline#themes#powerline_solarized256#palette.visual.airline_x = g:airline#themes#powerline_solarized256#palette.normal.airline_x
 let g:airline#themes#powerline_solarized256#palette.visual.airline_y = g:airline#themes#powerline_solarized256#palette.normal.airline_y
 let g:airline#themes#powerline_solarized256#palette.visual.airline_z = g:airline#themes#powerline_solarized256#palette.normal.airline_z
+
+
+" airline-specific theming
+let g:airline#themes#powerline_solarized256#palette.normal.airline_warning = g:airline#themes#powerline_solarized256#palette.normal.airline_c "['#5f5f00', '#ff5f00', 247, 52]
+let g:airline#themes#powerline_solarized256#palette.normal_modified = {'airline_warning': g:airline#themes#powerline_solarized256#palette.normal.airline_warning}
+let g:airline#themes#powerline_solarized256#palette.insert.airline_warning = g:airline#themes#powerline_solarized256#palette.normal.airline_warning
+let g:airline#themes#powerline_solarized256#palette.insert_modified = {'airline_warning': g:airline#themes#powerline_solarized256#palette.normal.airline_warning}
+let g:airline#themes#powerline_solarized256#palette.replace.airline_warning = g:airline#themes#powerline_solarized256#palette.normal.airline_warning
+let g:airline#themes#powerline_solarized256#palette.replace_modified = {'airline_warning': g:airline#themes#powerline_solarized256#palette.normal.airline_warning}
+let g:airline#themes#powerline_solarized256#palette.visual.airline_warning = g:airline#themes#powerline_solarized256#palette.normal.airline_warning
+let g:airline#themes#powerline_solarized256#palette.visual_modified = {'airline_warning': g:airline#themes#powerline_solarized256#palette.normal.airline_warning}
