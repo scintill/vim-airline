@@ -108,7 +108,7 @@ let g:airline#themes#powerline_solarized256#palette = {
 \       '#005f87',
 \       254,
 \       24,
-\       'bold'
+\       'NONE'
 \     ],
 \     'airline_y':[
 \       '#626262',
@@ -152,7 +152,7 @@ let g:airline#themes#powerline_solarized256#palette = {
 \       '#073642',
 \       245,
 \       235,
-\       'bold'
+\       'NONE'
 \     ],
 \     'airline_gap':[
 \       '#ffffff',
